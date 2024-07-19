@@ -1,0 +1,177 @@
+configurar o email do git global:
+
+git config --globar user.name "nome"
+git config --global user.email "email"
+
+para criar local somente tirar o --global
+
+verificar configuração: git config --global --list
+
+=======================================================================================================================
+
+git init = criar um repositorio vazio
+
+git clone "endereço" "nome da pasta" = clonar um repositorio
+
+=======================================================================================================================
+Add;
+
+
+git add "nome do arquivo" =  Atualiza o arquivo
+git add . = Atualiza todos 
+git add *."tipo do arquivo = Atualiza todos que possuem esse tipo de arquivo
+git add -A= atualiza quem não entrou no stage
+
+=======================================================================================================================
+
+git reset "nome do arquivo" = tira a mudança do stage mas não altera o diretorio de trabalho
+
+git restore "nome do arquivo" = restaura o diretorio 
+
+
+========================================================================================================================
+Diff;
+
+
+git diff = você consegue ver a diferença do stage e do working dear 
+
+git diff "nome do arquivo" = mostra a diferença do arquivo especifico (RECOMENDADO)
+
+========================================================================================================================
+
+git status =  mostra os arquivos e suas modificações, os que estão no stade e as que foram modificadas.
+
+git log = mostra as mudanças feitas no repositorio, com nome,idade
+
+git log -"numero de commits que você quer ver" =mostra os ultimos commits de acordo com o numero que você colocar.
+
+git log --oneline = mostra em uma linha (possivel fazer junção com o -"numero")
+
+git log --author="nome do autor" =  lista todos os commits feitas pelo autor
+
+git log --before="YYYY-MM-DD" = Vizualiza por data
+
+git log -- "nome da pasta"/ = Vizualiza as mudanças feitas nesta pasta
+
+git shortlog = mostra os autores e as quantidades de mudanças feitas de maneira mais curta e resumida
+
+git shortlog -sn = ver a quantidade por autor
+
+git reflog = mostra as açoes que fazemos no repositorio 
+
+-----------------------------------------------
+
+
+Commit = Fotografia do estado dos arquivos do repositorio de um determinado momento.
+-Não sobrescreve o trabalho main
+
+git commit -m "mensagem doque foi feito" = comitar 
+
+git commit -a -m "" = adiciona e comita ao mesmo tempo, porem pode adicionar arquivos que você não deseja
+
+git commit --amend -m "" = atualiza o ultimo commit feito
+
+git diff --staged = mostra a diferença dos ultimos commits
+
+------------------------------------------------------
+
+Branchs;
+
+git branch = mostra as branch que temos
+
+git branch "nome da branch" = cria uma branch nova
+
+git branch -D "nome da branch" = deletar uma branch
+
+git checkout "nome da branch" = ir para um branch
+
+git checkout -b "nome da branch" = adicionar e ir para a branch nome.
+
+git branch -m "nome novo da branch" = mudar o nome da branch
+
+git diff "nome da branch" "nome de outra branch" = mostra as diferenças das branchs
+
+-----------------------------------------------------------
+
+git remote add "nome do repositorio remoto "link do repositorio na nuvem"  = adiciona o repositoria na nuvem no nosso git
+
+git remote -v = mostra o nome da branch que usamos para acessar o repositorio remoto
+
+git push -u "nome do repositorio remoto"  "nome do branch que queremos enviar"  = enviar nosso repositorio para o repositorio remoto
+
+git push --set-upstream = Envia a nossa branch para o remoto e recebe atualizações se haver mudanças
+
+git pull "nome da pasta remota" "nome do nosso repositorio" = sincroniza as mudanças feitas no remoto para o nosso local
+
+git remote show "nome da pasta remota" = mostra informações sobre o remote
+
+git remote set-url "nome do remoto" "nova url do repositorio" = trocar a url da pasta remota
+
+
+--------------------------------------------------------------
+
+git merge "nome de outra branch" = utlizado para mesclar as branchs, por exemplo: se estamos na main e queremos mesclar a branch DEV, iremos fazer git merge DEV, assim ela ira mesclar, porém, pode acontecer de existir algum conflito entre as Branchs
+
+git merge --abort = aborta a mesclagem caso aconteça algum conflito 
+
+git merge --continue = caso você tenha resolvido o conflito, esse codigo ira continuar a mesclagem 
+
+rebase: move o historico de commits da branch de origem para a branch de destino
+
+git rebase "nome da branch" = move as commits para a branch de destino
+
+git rebase "noma da branch que você moveu os commits" = atualiza a branch de destino com a branch que você enviou
+
+git rebase -i HEAD~"numero de commits que você quer enviar para a branch de destino"
+
+abbort e continue = mesma funcionalidade no merge
+
+merge; preserva o historico completo e a ordem original dos commits
+
+rebase; cria um historico linear, util para projetos com o historico limpo; CUIDADO!! Altera o historico dos commits!!!
+
+----------------------------------------------------------------
+
+Tag leve : ponteiro para um commit especifico; não contem informaçoes adicionais
+
+
+Tag anotada : detalhada; permite o uso do gpg
+
+git tag "nome da tag" =  criar um rotulo
+
+git tag -d "nome da tag" = remover a tag
+
+git tag -a "nome da tag" -m "mensagem que desejamos" = criar uma tag detalhada
+
+git tag -s "nome da tag" -m "mensagem desejada" = cria uma tag assinada
+
+git push "nome do repositorio remoto" "nome da tag" = envia o nome da tag e suas modificaçoes para o repositorio remoto
+
+git push "nome do repositorio remoto" --delete "nome da tag" = remove a tag do repositorio remoto
+
+Porque usar uma tag????
+
+- versoes de lançamento
+;util para rastrear modificaçoes especificas em versoes diferentes
+
+- pontos de controle
+
+- intregridade e verificação
+
+--------------------------------------------------------------
+
+git checkout -- "nome do arquivo" = restaura oque foi feito no arquivo
+
+git reset --hard HEAD~"numero do commit" = remove o ultimo commit feito
+
+git commit --amend = para editar o commit feito
+
+git revert "hash do commit" = ele atualiza uma nova commit
+
+git stash = pega todas as suas mudanças e faz um branch temporario
+
+git stash pop = ele pega as mudaças do stash e coloca na branch, ele exclui o stash
+
+git stash apply = pega as mudanças que estão no stash e coloca na branch, porém o stash ainda fica salvo, diferente do pop
+
+git push "nome do remoto" "nome do branch local" --force = reverte o ultimo commit feito
