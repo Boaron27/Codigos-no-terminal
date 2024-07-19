@@ -1,0 +1,70 @@
+clear ou (crtl + l) = limpar o terminal
+
+ls = listagem da pasta home
+ls -l = estrutura de permissoes
+ls -A = listagem de arquivos ocultos
+
+cd = mudar de diretorio, para você poder entrar em uma pasta 
+ex: cd Documentos/
+ex para voltar para home: cd/home/gbresende  ou cd 
+
+mkdir 'curso de terminal' = criar uma pasta
+** sem as aspas ele cria uma pasta pra cada nominal **
+
+rmdir 'curso de terminal' = remover a pastas
+
+* para pastas com nome composto deve se utilizar as ' '
+ou utilizar o \ 
+
+pwp = se indica em que pasta você esta
+
+touch = criar um arquivo qualquer
+
+nano = edição de texto
+
+cat = para mostrar oque esta escrito no arquivo txt
+
+rm - r 'nome da pasta' = remove a pasta e tudo que tiver dentro dela
+
+-------------------------------------------------------------------------------------
+
+
+sudo (super user do) = dar permições de hot a seguir  (somente utilizado para fazer tarefas administrativas)
+
+apt = utilitario, capaz de buscar um pacote, baixar e instalar
+
+update = atualizar
+
+sudo apt update = verificar se existem atualizaçoes para os repositorios e o sistema
+
+apt list --upgradable = lista as atualizaçoes que podem serem feitas
+
+man + "comando" = para ver o manual do comando
+
+"comando" --help = para ver sobre o comando
+
+apt --help:
+list - listar pacotes com base em nomes de pacotes
+  search - pesquisar nas descrições dos pacotes
+  show - mostrar detalhes do pacote
+  install - instalar pacotes
+  reinstall - reinstalar os pacotes
+  remove - remover os pacotes
+  autoremove - Remove automaticamente todos os pacotes não usados
+  update - atualiza a lista de pacotes disponíveis
+  upgrade - atualiza o sistema ao instalar/atualizar pacotes
+  full-upgrade - atualiza o sistema ao remover/instalar/atualizar pacotes
+  edit-sources - edite o ficheiro de informações de origem
+  satisfy - satisfazer as strings de dependência
+
+sudo apt install 'nome do pacote' = instalar um pacote 
+
+sudo apt remove 'nome do pacote' = remover um pacote
+
+dist-upgrade = full-upgrade
+
+apt cache depends = procurar dependencias de um pacote
+
+"comando para adicionar" !! "comando para adicionar" = completar o comando com a informação do comando anterior, pós !! ou anterior, coloca o comando atual
+
+
