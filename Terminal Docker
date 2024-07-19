@@ -1,0 +1,25 @@
+docker ps = quantos containers estão executando na nossa maquina
+
+docker run hello-world = pega a imagem do docker hub para ver como funciona
+
+docker ps -a = tudo que ja executou na nossa maquina e mostra quando foi executado
+
+docker run -it ubuntu bash = iniciar o processo do bash dentro do ubuntu
+
+docker stop "id do container" = para de executar o container
+
+docker start "id do container" = starta novamente o container
+
+docker exec -it "id do container" "oque queremos interagir" = conseguimos interagir novamente com o container que foi fechado
+
+
+
+docker run --name some-postgres -e POSTGRES_PASSWORD=senha -p 5432:5432 -d postgres
+
+docker start some-postgres == startar o docker para abrir o pgadmin4
+
+
+
+docker compose down =  fechar e excluir as informações do container
+
+docker compose up = subir o container para funcionamento
